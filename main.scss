@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == 'lg' {
+		@media screen and (max-width: 1200px) {
+			@content;
+		}
+	} @else if $breakpoint == 'md' {
+		@media screen and (max-width: 850px) {
+			@content;
+		}
+	} @else if $breakpoint == 'sm' {
+		@media screen and (max-width: 650px) {
+			@content;
+		}
+	} @else if $breakpoint == 'xsm' {
+		@media screen and (max-width: 425px) {
+			@content;
+		}
+	}
+}
+
+$mobile-width: 375px;
+$desktop-width: 1440px;
+
+$red: hsl(14, 86%, 42%);
+$green: hsl(159, 69%, 38%);
+$rose-50: hsl(20, 50%, 98%);
+$rose-100: hsl(13, 31%, 94%);
+$rose-300: hsl(14, 25%, 72%);
+$rose-400: hsl(7, 20%, 60%);
+$rose-500: hsl(12, 20%, 44%);
+$rose-900: hsl(14, 65%, 9%);
+
+$font-size: 16px;
+$font-family: 'Red Hat Text', sans-serif;
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+
+body {
+	font-family: $font-family;
+    background: $rose-50;
+}
+
+
+
+.container {
+	background: $rose-50;
+	padding: 70px 0 70px;
+}
+
+.shop {
+	&_main {
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+        
+
+		&_title {
+			font-weight: $bold;
+			font-size: 36px;
+		}
+	}
+
+	&_wrapper {
+        padding: 0 30px 0 30px;
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		gap: 35px;
+        justify-content: space-between;
+        position: relative;
+        @include respond-to('lg'){
+            gap: 18px;
+        }
+        @include respond-to('sm'){
+            flex-direction: column;
+            padding: 0 10px 0 15px;
+        }
+	}
+
+	&_item {
+		position: relative;
+		&_img {
+			max-width: 230px;
+			border-radius: 14px;
+		}
+
+		&_btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 200px;
+			left: 39px;
+			gap: 7px;
+			background: #fff;
+			border-radius: 40px;
+			border: 1px solid $red;
+			padding: 9px 16px 8px 16px;
+			font-weight: $semibold;
+			font-size: $font-size;
+
+			&:hover {
+				color: $red;
+			}
+		}
+
+		&_text {
+			padding-top: 25px;
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+		}
+
+		&_type {
+			color: $rose-400;
+			font-weight: $regular;
+		}
+
+		&_name {
+			color: $rose-900;
+			font-size: $font-size;
+		}
+		&_price {
+			color: $red;
+			font-size: $font-size;
+			font-weight: $regular;
+		}
+	}
+
+	&_items_wrapper {
+		display: flex;
+		flex-wrap: wrap;
+        @include respond-to('lg'){
+            justify-content: space-evenly;
+        }
+        max-width: 800px;
+		gap: 20px;
+        
+	}
+
+	&_cart {
+        display: flex;
+        max-width: 100%;
+        max-height: fit-content;
+        @include respond-to('sm'){
+            justify-content: center;
+        }
+
+		&_wrapper {
+			display: flex;
+			flex-direction: column;
+			background: #fff;
+			padding: 20px 20px 25px 20px;
+			border-radius: 20px;
+            max-height: fit-content;
+            min-width: 320px;
+		}
+
+		&_title {
+			color: $red;
+			font-size: 23px;
+		}
+
+        &_total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0 18px;
+
+            &_title{
+                font-size: $font-size;
+                color: $rose-500;
+            }
+        }
+
+        &_empty{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 60px 30px 60px;
+        }
+
+        &_info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 15px 30px 15px 30px;
+            background: $rose-50;
+            border-radius: 10px;
+            font-size: $font-size;
+            span{
+                font-weight: $semibold;
+            }
+        }
+
+        &_btn{
+            color: #fff;
+            background: $red;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px 15px 40px;
+            font-weight: $semibold;
+            margin-top: 20px;
+
+            &:hover{
+                background: hsl(14, 85%, 36%);
+            }
+        }
+
+        &_full{
+            display: none;
+            width: 100%;
+            flex-direction: column;
+        }
+	}
+
+	&_order {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid hsl(14deg 25% 72% / 60%);
+        padding-bottom: 8px;
+
+        &_info{
+            display: flex;
+            flex-direction: column;
+            
+
+            &_bottom{
+                display: flex;
+                gap: 8px;
+            }
+        }
+
+        &_delete{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: 1px solid $rose-300;
+            border-radius: 50%;
+            max-height: 12px;
+            max-width: 12px;
+            padding: 8px;
+            &:hover{
+                border-color: $rose-500;
+                background-color: #e0e0e08a;
+            }
+        }
+
+        &_name{
+            font-size: $font-size;
+            color: $rose-900;
+            font-weight: $semibold;
+        }
+
+        &_quantity{
+            color: $red;
+            font-size: $font-size;
+            font-weight: $regular;
+        }
+
+        &_price{
+            color: $rose-400;
+            font-size: $font-size;
+            font-weight: $regular;
+        }
+
+        &_total{
+            color: $rose-500;
+            font-size: $font-size;
+            font-weight: $semibold;
+        }
+
+		&s_wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+            padding-top: 25px;
+		}
+
+        &_item{
+            &s_count{
+                display: none;
+                position: absolute;
+                top: 200px;
+                left: 39px;
+                background: $red;
+                justify-content: space-between;
+                align-items: center;
+                gap: 38.17px;
+                padding: 10.5px 16px 10.5px 16px;
+                border-radius: 40px;
+
+                p{
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: $semibold;
+                }
+
+                button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: none;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    max-height: 12px;
+                    max-width: 12px;
+                    padding: 8px;
+                    
+                    &:hover{
+                        border-color: #fff;
+                        background-color: #770505a2;
+                    }
+                }
+            }
+        }
+
+	}
+
+
+
+
+    &_modal{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        max-width: 575px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 32px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+
+        &_title{
+            font-size: 36px;
+            font-weight: $bold;
+            padding: 20px 0 5px;
+        }
+
+        &_cart_total{
+            padding-bottom: 0;
+        }
+
+        &_order{
+            border-bottom: 1px solid $rose-100;
+            &_img{
+                max-width: 42px;    
+                border-radius: 5px;
+            }
+
+            &_left{
+                display: flex;
+                gap: 12px;
+                align-items: center;
+            }
+
+            &_total{
+                color: $rose-900;
+                font-weight: $bold;
+            }
+
+            &_info{
+                gap: 3px;
+            }
+
+            &s{
+                background: $rose-50;
+                padding: 20px;
+                border-radius: 20px;
+                margin: 25px 0 15px;
+
+                &_wrapper{
+                    padding: 0;
+                }
+            }
+            
+        }
+
+        &_icon{
+            max-width: 50px;
+            
+        }
+
+        &_btn{
+            font-weight: $semibold;
+        }
+    }
+
+    &_overlay{
+        display: none; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 1; 
+    }
+}

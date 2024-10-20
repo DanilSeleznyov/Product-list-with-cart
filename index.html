@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+
+		<title>Frontend Mentor | Product list with cart</title>
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="shop_wrapper">
+				<div class="shop_main">
+					<h2 class="shop_main_title">Desserts</h2>
+					<div class="shop_items_wrapper">
+						
+					</div>
+				</div>
+				<div class="shop_cart">
+					<div class="shop_cart_wrapper">
+						<h2 class="shop_cart_title">Your Cart (0)</h2>
+            <div class="shop_cart_empty">
+              <img src="assets\images\illustration-empty-cart.svg" alt="" class="shop_cart_empty_img">
+              <p class="shop_cart_empty_desc">Your added items will appear here</p>
+            </div>
+						<div class="shop_cart_full">
+							<div class="shop_cart_orders_wrapper shop_orders_wrapper">
+								
+							</div>
+							<div class="shop_cart_total">
+								<p class="shop_cart_total_title">Order Total</p>
+								<h2 class="shop_cart_total_price shop_order_total_price">$0</h2>
+							</div>
+							<div class="shop_cart_info">
+								<img
+									src="assets\images\icon-carbon-neutral.svg"
+									alt=""
+									class="shop_cart_info_icon"
+								/>
+								<p class="shop_cart_info_text">
+									This is a <span>carbon-neutral</span> delivery.
+								</p>
+							</div>
+							<button class="shop_cart_btn" onclick="showModal()">Confirm Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <div class="shop_modal">
+        <img src="assets\images\icon-order-confirmed.svg" alt="" class="shop_modal_icon">
+        <h2 class="shop_modal_title">Order Confirmed</h2>
+        <p class="shop_modal_desc">We hope you enjoy your food!</p>
+        <div class="shop_modal_orders">
+          <div class="shop_modal_orders_wrapper shop_orders_wrapper">
+
+          </div>
+          <div class="shop_cart_total shop_modal_cart_total">
+            <p class="shop_cart_total_title">Order Total</p>
+								<h2 class="shop_cart_total_price shop_modal_total">$46.50</h2>
+          </div>
+        </div>
+        <button class="shop_modal_btn shop_cart_btn" onclick="closeModal()">Start new order</button>
+      </div>
+      <div class="shop_overlay"></div>
+		</div>
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+			Coded by <a href="https://github.com/DanilSeleznyov">Seleznyov Danil</a>.
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

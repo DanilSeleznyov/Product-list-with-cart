@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background: hsl(20, 50%, 98%);
+}
+
+.container {
+  background: hsl(20, 50%, 98%);
+  padding: 70px 0 70px;
+}
+
+.shop_main {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.shop_main_title {
+  font-weight: 700;
+  font-size: 36px;
+}
+.shop_wrapper {
+  padding: 0 30px 0 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  gap: 35px;
+  justify-content: space-between;
+  position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .shop_wrapper {
+    gap: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .shop_wrapper {
+    flex-direction: column;
+    padding: 0 10px 0 15px;
+  }
+}
+.shop_item {
+  position: relative;
+}
+.shop_item_img {
+  max-width: 230px;
+  border-radius: 14px;
+}
+.shop_item_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  left: 39px;
+  gap: 7px;
+  background: #fff;
+  border-radius: 40px;
+  border: 1px solid hsl(14, 86%, 42%);
+  padding: 9px 16px 8px 16px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.shop_item_btn:hover {
+  color: hsl(14, 86%, 42%);
+}
+.shop_item_text {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.shop_item_type {
+  color: hsl(7, 20%, 60%);
+  font-weight: 400;
+}
+.shop_item_name {
+  color: hsl(14, 65%, 9%);
+  font-size: 16px;
+}
+.shop_item_price {
+  color: hsl(14, 86%, 42%);
+  font-size: 16px;
+  font-weight: 400;
+}
+.shop_items_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  gap: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .shop_items_wrapper {
+    justify-content: space-evenly;
+  }
+}
+.shop_cart {
+  display: flex;
+  max-width: 100%;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+@media screen and (max-width: 650px) {
+  .shop_cart {
+    justify-content: center;
+  }
+}
+.shop_cart_wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px 20px 25px 20px;
+  border-radius: 20px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  min-width: 320px;
+}
+.shop_cart_title {
+  color: hsl(14, 86%, 42%);
+  font-size: 23px;
+}
+.shop_cart_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0 18px;
+}
+.shop_cart_total_title {
+  font-size: 16px;
+  color: hsl(12, 20%, 44%);
+}
+.shop_cart_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 60px 30px 60px;
+}
+.shop_cart_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 15px 30px 15px 30px;
+  background: hsl(20, 50%, 98%);
+  border-radius: 10px;
+  font-size: 16px;
+}
+.shop_cart_info span {
+  font-weight: 600;
+}
+.shop_cart_btn {
+  color: #fff;
+  background: hsl(14, 86%, 42%);
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px 15px 40px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.shop_cart_btn:hover {
+  background: hsl(14, 85%, 36%);
+}
+.shop_cart_full {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+}
+.shop_order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsla(14, 25%, 72%, 0.6);
+  padding-bottom: 8px;
+}
+.shop_order_info {
+  display: flex;
+  flex-direction: column;
+}
+.shop_order_info_bottom {
+  display: flex;
+  gap: 8px;
+}
+.shop_order_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid hsl(14, 25%, 72%);
+  border-radius: 50%;
+  max-height: 12px;
+  max-width: 12px;
+  padding: 8px;
+}
+.shop_order_delete:hover {
+  border-color: hsl(12, 20%, 44%);
+  background-color: rgba(224, 224, 224, 0.5411764706);
+}
+.shop_order_name {
+  font-size: 16px;
+  color: hsl(14, 65%, 9%);
+  font-weight: 600;
+}
+.shop_order_quantity {
+  color: hsl(14, 86%, 42%);
+  font-size: 16px;
+  font-weight: 400;
+}
+.shop_order_price {
+  color: hsl(7, 20%, 60%);
+  font-size: 16px;
+  font-weight: 400;
+}
+.shop_order_total {
+  color: hsl(12, 20%, 44%);
+  font-size: 16px;
+  font-weight: 600;
+}
+.shop_orders_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 25px;
+}
+.shop_order_items_count {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 39px;
+  background: hsl(14, 86%, 42%);
+  justify-content: space-between;
+  align-items: center;
+  gap: 38.17px;
+  padding: 10.5px 16px 10.5px 16px;
+  border-radius: 40px;
+}
+.shop_order_items_count p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.shop_order_items_count button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  max-height: 12px;
+  max-width: 12px;
+  padding: 8px;
+}
+.shop_order_items_count button:hover {
+  border-color: #fff;
+  background-color: rgba(119, 5, 5, 0.6352941176);
+}
+.shop_modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  max-width: 575px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.shop_modal_title {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 20px 0 5px;
+}
+.shop_modal_cart_total {
+  padding-bottom: 0;
+}
+.shop_modal_order {
+  border-bottom: 1px solid hsl(13, 31%, 94%);
+}
+.shop_modal_order_img {
+  max-width: 42px;
+  border-radius: 5px;
+}
+.shop_modal_order_left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.shop_modal_order_total {
+  color: hsl(14, 65%, 9%);
+  font-weight: 700;
+}
+.shop_modal_order_info {
+  gap: 3px;
+}
+.shop_modal_orders {
+  background: hsl(20, 50%, 98%);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 25px 0 15px;
+}
+.shop_modal_orders_wrapper {
+  padding: 0;
+}
+.shop_modal_icon {
+  max-width: 50px;
+}
+.shop_modal_btn {
+  font-weight: 600;
+}
+.shop_overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}/*# sourceMappingURL=main.css.map */
