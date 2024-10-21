@@ -98,7 +98,7 @@ body {
 			align-items: center;
 			justify-content: center;
 			position: absolute;
-			top: 200px;
+			bottom: 80px;
 			left: 39px;
 			gap: 7px;
 			background: #fff;
@@ -294,7 +294,7 @@ body {
             &s_count{
                 display: none;
                 position: absolute;
-                top: 200px;
+                bottom: 80px;
                 left: 39px;
                 background: $red;
                 justify-content: space-between;

@@ -99,7 +99,7 @@ function decrementOrdersCount(id){
 function addToCart(id) {
     document.querySelectorAll('.shop_item_btn')[id].style.display = 'none'
     document.querySelectorAll('.shop_order_items_count')[id].style.display = 'flex'
-    document.querySelectorAll('.shop_item_img')[id].style.border = '2px solid hsl(14, 86%, 42%)'
+    document.querySelectorAll('.shop_item_img')[id].style.border = '3px solid hsl(14, 86%, 42%)'
     orders.push(id)
     ordersCount[id] = ordersCount[id] + 1
     localStorage.setItem('orders', JSON.stringify(orders))
@@ -146,7 +146,7 @@ function upDateItemsCount(){
     orders.forEach(el=>{
         document.querySelectorAll('.shop_item_btn')[el].style.display = 'none'
         document.querySelectorAll('.shop_order_items_count')[el].style.display = 'flex'
-        document.querySelectorAll('.shop_item_img')[el].style.border = '2px solid hsl(14, 86%, 42%)'
+        document.querySelectorAll('.shop_item_img')[el].style.border = '3px solid hsl(14, 86%, 42%)'
         document.querySelectorAll('.shop_order_item_count')[el].innerHTML = ordersCount[el]
     })
     upDateCart()
